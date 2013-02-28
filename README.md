@@ -1,4 +1,4 @@
-ci_start
+CI START
 ========
 
-Configurações básicas para projetos em CodeIgniter
+* Configurações básicas para projetos em CodeIgniter
