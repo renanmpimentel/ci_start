@@ -10,7 +10,7 @@ class Controller_basico extends CI_Controller {
 
 	public function index()
 	{
-		
+		$data['consulta'] = $this->model_basico->consultaSimplesBanco('param');
 	}
 
 }
