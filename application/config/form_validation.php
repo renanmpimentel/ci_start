@@ -69,9 +69,12 @@
 //Qualquer função nativa do PHP que aceita um parâmetro pode ser usado como uma regra, como htmlspecialchars, trim, MD5, etc 
   
 $config = array(
-            array(
-                  'field'   => 'name',
-                  'label'   => 'name', 
-                  'rules'   => 'required|trim'
-                )
-        );
+	'login' => 
+  		array(
+    			array(
+         		'field'   => 'usr_login',
+          		'label'   => 'usr_login', 
+          		'rules'   => 'required'
+        		)
+        	)
+	);
