@@ -1,0 +1,8 @@
+{
+	"description" : "Install codeigniter with twitter bootstrap 2.3",
+	"name" : "renanmpimentel/codeigniter_start",
+	"license": "OSL-3.0",
+	"require": {
+		"php": ">=5.2.4"
+	}
+}
