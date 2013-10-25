@@ -20,148 +20,151 @@
 	$db['default']['dbdriver'] = 'mysql';
 ```
 
-#### Configurações prontas
+#### Pré-Configurações
+
 
 As configurações aqui colocadas são apenas para estudos, recomendo a consulta na documentação oficial do Codeigniter.
 
 No arquivo `application/config/autoload.php`, temos: 
 
 ```php
-	//Carrega as bibliotecas do Banco de Dados, de Sessão do Codeigniter e validação de formulários
-	$autoload['libraries'] = array('database', 'session', 'form_validation');
+//Carrega as bibliotecas do Banco de Dados, de Sessão do Codeigniter e validação de formulários
+$autoload['libraries'] = array('database', 'session', 'form_validation');
 
-	//Carrega os helpers de URL e para gerar formulários
-	$autoload['helper'] = array('url', 'form');
+//Carrega os helpers de URL e para gerar formulários
+$autoload['helper'] = array('url', 'form');
 
-	//Carrega a configuração de form_validation no autoload
-	$autoload['config'] = array('form_validation');
+//Carrega a configuração de form_validation no autoload
+$autoload['config'] = array('form_validation');
 ```
 
 No arquivo `application/config/config.php`, temos:
 
 ```php
-	//Carrega a tradução das mensagens
-	$config['language']	= 'portuguese-br';
+//Carrega a tradução das mensagens
+$config['language']	= 'portuguese-br';
 
-	//Criar um chave para criptografar sessões e etc
-	$config['encryption_key'] = '[ENCRYPTION_KEY]';
+//Criar um chave para criptografar sessões e etc
+$config['encryption_key'] = '[ENCRYPTION_KEY]';
 ```
 
-#### Input Text
+### Para criar formulário, usando o `helper form`
+
+##### Input Text
 
 ```php
 <?php
-	echo "<div class='form-group'>";
-		echo form_label('Texto', 'nome');
-		echo form_input(array(
-								'name'=>'nome', 
+echo "<div class='form-group'>";
+	echo form_label('Texto', 'nome');
+	echo form_input(array(
+							'name'=>'nome', 
+							'class'=>'form-control', 
+							'placeholder'=>'Label'
+						)
+					);
+	echo form_error('nome');
+echo "</div>";
+?>
+```
+
+##### Input Password
+
+```php
+<?php
+echo "<div class='form-group'>";
+	echo form_label('Senha', 'senha');
+	echo form_password(array(
+								'name'=>'senha', 
 								'class'=>'form-control', 
-								'placeholder'=>'Label'
+								'placeholder'=>'senha'
 							)
 						);
-		echo form_error('nome');
-	echo "</div>";
+	echo form_error('senha');
+echo "</div>";
 ?>
 ```
 
-#### Input Password
+##### Input Textarea 
 
 ```php
 <?php
-	echo "<div class='form-group'>";
-		echo form_label('Senha', 'senha');
-		echo form_password(array(
-									'name'=>'senha', 
-									'class'=>'form-control', 
-									'placeholder'=>'senha'
-								)
-							);
-		echo form_error('senha');
-	echo "</div>";
+echo "<div class='form-group'>";
+	echo form_label('Textarea', 'textarea');
+	echo form_textarea(array(
+								'name'=>'textarea', 
+								'class'=>'form-control', 
+								'rows' => 5, 
+								'placeholder'=>'Texto'));
+	echo form_error('textarea');
+echo "</div>";
 ?>
 ```
 
-#### Input Textarea 
-
-```php
-	<?php
-	echo "<div class='form-group'>";
-		echo form_label('Textarea', 'textarea');
-		echo form_textarea(array(
-									'name'=>'textarea', 
-									'class'=>'form-control', 
-									'rows' => 5, 
-									'placeholder'=>'Texto'));
-		echo form_error('textarea');
-	echo "</div>";
-	?>
-```
-
-#### Input upload
+##### Input upload
 
 ```php
 <?php
-	echo "<div class='form-group'>";
-		echo form_label('Upload', 'upload');
-		echo form_upload(array(
-								'name'=>'upload', 
-								'class'=>'span12'
-								)
-							);
-		echo "<p class='help-block'>Texto de exemplo para download. (jpg, gif, png)</p>";
-		echo form_error('upload');
-	echo "</div>";
+echo "<div class='form-group'>";
+	echo form_label('Upload', 'upload');
+	echo form_upload(array(
+							'name'=>'upload', 
+							'class'=>'span12'
+							)
+						);
+	echo "<p class='help-block'>Texto de exemplo para download. (jpg, gif, png)</p>";
+	echo form_error('upload');
+echo "</div>";
 ?>
 ```
-#### Input Checkbox
+##### Input Checkbox
 
 ```php
 <?php
-	echo "<div class='checkbox'>";
-		echo form_label('Checkbox', 'checkbox');
-		echo form_checkbox(array(
-									'name'=>'checkbox', 
-									'checked' => TRUE
-								)
-							);
-		echo form_error('checkbox');
-	echo "</div>";
-	?>
-```
-
-#### Input Radio
-
-```php
-<?php
-	echo "<div class='radio'>";
-		echo form_label('Radio', 'radio');
-		echo form_radio(array(
-								'name'=>'radio', 
+echo "<div class='checkbox'>";
+	echo form_label('Checkbox', 'checkbox');
+	echo form_checkbox(array(
+								'name'=>'checkbox', 
 								'checked' => TRUE
 							)
 						);
-		echo form_error('radio');
-	echo "</div>";
-	?>
+	echo form_error('checkbox');
+echo "</div>";
+?>
 ```
 
-#### Select
+##### Input Radio
 
 ```php
-	<?php
-		$select = array(
-                  '1' => 'Primeiro',
-                  '2' => 'Segundo',
-                  '3' => 'Terceiro',
-                  '4' => 'Quarto'
-                );
-		echo form_label('Select', 'select');
-		echo form_dropdown('shirts', $select, '', 'class="form-control"');
-		echo form_error('select');
-	?>
+<?php
+echo "<div class='radio'>";
+	echo form_label('Radio', 'radio');
+	echo form_radio(array(
+							'name'=>'radio', 
+							'checked' => TRUE
+						)
+					);
+	echo form_error('radio');
+echo "</div>";
+?>
 ```
 
-#### Button
+##### Select
+
+```php
+<?php
+	$select = array(
+              '1' => 'Primeiro',
+              '2' => 'Segundo',
+              '3' => 'Terceiro',
+              '4' => 'Quarto'
+            );
+	echo form_label('Select', 'select');
+	echo form_dropdown('shirts', $select, '', 'class="form-control"');
+	echo form_error('select');
+?>
+```
+
+##### Button
 
 ```php
 <?php
@@ -175,42 +178,44 @@ No arquivo `application/config/config.php`, temos:
 ?>
 ```
 
-#### Criando Boleto, usando helper `My_boleto_*`
+-------------------
+
+##### Criando Boleto, usando helper `My_boleto_*`
 
 ```php
 <?php
+class Boletos extends CI_Controller {
 
-	class Boletos extends CI_Controller {
+public function __construct()
+{
+	parent::__construct();
+}
 
-	public function __construct()
-	{
-		parent::__construct();
-	}
+/**
+ * [boleto_bancoob description]
+ * @return [type] [description]
+ */
+public function boleto_bancoob()
+{	
+	$data = array(
+			'dados_cliente'  => '',
+			'dados_empresa'  => '',
+			'dados_boleto'	 => '',	
+			'valores_boleto' => ''
+		);
 
-	/**
-	 * [boleto_bancoob description]
-	 * @return [type] [description]
-	 */
-	public function boleto_bancoob()
-	{	
-		$data = array(
-				'dados_cliente'  => '',
-				'dados_empresa'  => '',
-				'dados_boleto'	 => '',	
-				'valores_boleto' => ''
-			);
-
-		$this->load->helper('My_boleto_bancoob');  
-		boleto_bancoob($data['dados_cliente'], $data['dados_empresa'], $data['dados_boleto'], $data['valores_boleto']);
-	}
+	$this->load->helper('My_boleto_bancoob');  
+	boleto_bancoob($data['dados_cliente'], $data['dados_empresa'], $data['dados_boleto'], $data['valores_boleto']);
+}
 ?>
 ```
 
-#### Crie um arquivo `email.php` em `application/config/`
+-------------------
+
+##### Crie um arquivo `email.php` em `application/config/`
 
 ```php
 <?php
-
 	$this->load->library('email');
 
 	$this->email->from('your@example.com', 'Your Name');
@@ -224,8 +229,9 @@ No arquivo `application/config/config.php`, temos:
 	$this->email->send();
 ?>
 ```
+-------------------
 
-#### Criando PDF usando o helper `my_pdf_helper`
+##### Criando PDF usando o helper `my_pdf_helper`
 
 ```php
 <?php
