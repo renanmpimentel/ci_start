@@ -6,6 +6,9 @@
 
 `git clone https://github.com/renanmpimentel/ci_start.git`
 
+#### Ou faça o download aqui:
+[Download](https://github.com/renanmpimentel/ci_start/archive/master.zip)
+
 #### Edite o arquivo de banco de dados:
 	
 `application/config/database.php`
