@@ -46,7 +46,44 @@ $autoload['config'] = array('form_validation');
 ```
 *Apenas coloque database no autoload, se o banco de dados estiver configurado*
 
-No arquivo `application/config/config.php`, temos:
+##### Tabelas para trabalhar com Session do Codeigniter
+
+###### SQL ci_sessions para MYSQL
+
+```sql
+CREATE TABLE IF NOT EXISTS  `ci_sessions` (
+	session_id varchar(40) DEFAULT '0' NOT NULL,
+	ip_address varchar(45) DEFAULT '0' NOT NULL,
+	user_agent varchar(120) NOT NULL,
+	last_activity int(10) unsigned DEFAULT 0 NOT NULL,
+	user_data text NOT NULL,
+	PRIMARY KEY (session_id),
+	KEY `last_activity_idx` (`last_activity`)
+);
+```
+
+###### SQL ci_sessions para SQL SERVER
+
+```sql
+USE YOUR_DATABASE
+GO
+
+CREATE TABLE CI_Sessions (
+ session_id NVARCHAR(40) DEFAULT '0' NOT NULL,
+ ip_address NVARCHAR(16) DEFAULT '0' NOT NULL,
+ user_agent NVARCHAR(120) NOT NULL,
+ last_activity INT DEFAULT 0 NOT NULL,
+ user_data NTEXT NOT NULL,
+ CONSTRAINT  PK_CI_Session PRIMARY KEY (session_id ASC)
+)
+GO
+
+CREATE NONCLUSTERED INDEX NCI_Session_Activity
+ON CI_Sessions(last_activity DESC)
+GO 
+```
+
+##### `application/config/config.php`, configuramos a lingua padrão e a sessão:
 
 ```php
 (...)
@@ -71,40 +108,6 @@ $config['sess_time_to_update']	= 300;
 (...)
 ```
 
-##### SQL ci_sessions para MYSQL
-
-```sql
-CREATE TABLE IF NOT EXISTS  `ci_sessions` (
-	session_id varchar(40) DEFAULT '0' NOT NULL,
-	ip_address varchar(45) DEFAULT '0' NOT NULL,
-	user_agent varchar(120) NOT NULL,
-	last_activity int(10) unsigned DEFAULT 0 NOT NULL,
-	user_data text NOT NULL,
-	PRIMARY KEY (session_id),
-	KEY `last_activity_idx` (`last_activity`)
-);
-```
-
-##### SQL ci_sessions para SQL SERVER
-
-```sql
-USE YOUR_DATABASE
-GO
-
-CREATE TABLE CI_Sessions (
- session_id NVARCHAR(40) DEFAULT '0' NOT NULL,
- ip_address NVARCHAR(16) DEFAULT '0' NOT NULL,
- user_agent NVARCHAR(120) NOT NULL,
- last_activity INT DEFAULT 0 NOT NULL,
- user_data NTEXT NOT NULL,
- CONSTRAINT  PK_CI_Session PRIMARY KEY (session_id ASC)
-)
-GO
-
-CREATE NONCLUSTERED INDEX NCI_Session_Activity
-ON CI_Sessions(last_activity DESC)
-GO 
-```
 
 ### Para criar formulário, usando o `helper form`
 
