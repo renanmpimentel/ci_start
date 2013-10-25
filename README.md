@@ -180,6 +180,35 @@ echo "</div>";
 
 -------------------
 
+#### Usando o `form_validation`:
+
+##### Editando o arquivo responsavel pela regra de negocio: `application/config/form_validation.php`
+
+    'form' => nome da regra de validação
+    'field' => nome do campo
+    'label' => nome do campo no output ( Ex.: O campo %s é obrigatório - %s é o "label")
+    'rules' => regras, ver todas aqui: http://ellislab.com/codeigniter/user-guide/libraries/form_validation.html#rulereference
+
+```php
+$config = array(
+				'form' => 
+			  		array(
+						    array(
+						          'field'   => 'field_01',
+						          'label'   => 'label_01', 
+						          'rules'   => 'required'
+						        ),
+						    array(
+						          'field'   => 'field_02',
+						          'label'   => 'label_02', 
+						          'rules'   => 'required'
+						        )
+			   			)      
+				);
+``` 
+
+-------------------
+
 ##### Criando Boleto, usando helper `My_boleto_*`
 
 ```php
