@@ -1,5 +1,5 @@
 
-- Input Text
+### Input Text
 
 ```php
 <?php
@@ -16,7 +16,7 @@
 ?>
 ```
 
-- Input Password
+### Input Password
 
 ```php
 <?php
@@ -33,7 +33,7 @@
 ?>
 ```
 
-- Input Textarea 
+### Input Textarea 
 
 ```php
 	<?php
@@ -49,7 +49,7 @@
 	?>
 ```
 
-- Input upload
+### Input upload
 
 ```php
 <?php
@@ -65,7 +65,7 @@
 	echo "</div>";
 ?>
 ```
-- Input Checkbox
+### Input Checkbox
 
 ```php
 <?php
@@ -81,7 +81,7 @@
 	?>
 ```
 
-- Input Radio
+### Input Radio
 
 ```php
 <?php
@@ -97,7 +97,7 @@
 	?>
 ```
 
-- Select
+### Select
 
 ```php
 	<?php
@@ -113,7 +113,7 @@
 	?>
 ```
 
-- Button
+### Button
 
 ```php
 <?php
@@ -127,7 +127,7 @@
 ?>
 ```
 
-- Criando Boleto, usando helper `My_boleto_*`
+### Criando Boleto, usando helper `My_boleto_*`
 
 ```php
 <?php
@@ -158,7 +158,7 @@
 ?>
 ```
 
-- Crie um arquivo email.php em `application/config/`
+### Crie um arquivo email.php em `application/config/`
 
 ```php
 <?php
@@ -177,7 +177,7 @@
 ?>
 ```
 
-- Criando PDF usando o helper `my_pdf_helper`
+### Criando PDF usando o helper `my_pdf_helper`
 
 ```php
 <?php
