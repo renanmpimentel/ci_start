@@ -187,7 +187,9 @@ echo "</div>";
     'form' => nome da regra de validação
     'field' => nome do campo
     'label' => nome do campo no output ( Ex.: O campo %s é obrigatório - %s é o "label")
-    'rules' => regras, ver todas aqui: http://ellislab.com/codeigniter/user-guide/libraries/form_validation.html#rulereference
+    'rules' => ver todas regras no link abaixo
+
+[Rule Reference](http://ellislab.com/codeigniter/user-guide/libraries/form_validation.html#rulereference)
 
 ```php
 $config = array(
