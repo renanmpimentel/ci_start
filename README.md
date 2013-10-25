@@ -13,11 +13,15 @@
 #### Coloque seus dados de banco de dados:
 
 ```php
+(...)
+
 $db['default']['hostname'] = 'localhost';
 $db['default']['username'] = 'your_user';
 $db['default']['password'] = 'your_password';
 $db['default']['database'] = 'your_database';
 $db['default']['dbdriver'] = 'mysql';
+
+(...)
 ```
 
 #### Pré-Configurações
