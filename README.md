@@ -46,6 +46,52 @@ $config['language']	= 'portuguese-br';
 
 //Criar um chave para criptografar sessões e etc
 $config['encryption_key'] = '[ENCRYPTION_KEY]';
+
+//Para trabalhar com a sessão junto ao banco de dados
+$config['sess_cookie_name']		= 'ci_session';
+$config['sess_expiration']		= 7200;
+$config['sess_expire_on_close']	= FALSE;
+$config['sess_encrypt_cookie']	= TRUE;
+$config['sess_use_database']	= TRUE;
+$config['sess_table_name']		= 'ci_sessions';
+$config['sess_match_ip']		= FALSE;
+$config['sess_match_useragent']	= TRUE;
+$config['sess_time_to_update']	= 300;
+```
+
+##### SQL ci_sessions para MYSQL
+
+```sql
+CREATE TABLE IF NOT EXISTS  `ci_sessions` (
+	session_id varchar(40) DEFAULT '0' NOT NULL,
+	ip_address varchar(45) DEFAULT '0' NOT NULL,
+	user_agent varchar(120) NOT NULL,
+	last_activity int(10) unsigned DEFAULT 0 NOT NULL,
+	user_data text NOT NULL,
+	PRIMARY KEY (session_id),
+	KEY `last_activity_idx` (`last_activity`)
+);
+```
+
+##### SQL ci_sessions para SQL SERVER
+
+```sql
+USE YOUR_DATABASE
+GO
+
+CREATE TABLE CI_Sessions (
+ session_id NVARCHAR(40) DEFAULT '0' NOT NULL,
+ ip_address NVARCHAR(16) DEFAULT '0' NOT NULL,
+ user_agent NVARCHAR(120) NOT NULL,
+ last_activity INT DEFAULT 0 NOT NULL,
+ user_data NTEXT NOT NULL,
+ CONSTRAINT  PK_CI_Session PRIMARY KEY (session_id ASC)
+)
+GO
+
+CREATE NONCLUSTERED INDEX NCI_Session_Activity
+ON CI_Sessions(last_activity DESC)
+GO 
 ```
 
 ### Para criar formulário, usando o `helper form`
@@ -263,7 +309,12 @@ public function boleto_bancoob()
 		);
 
 	$this->load->helper('My_boleto_bancoob');  
-	boleto_bancoob($data['dados_cliente'], $data['dados_empresa'], $data['dados_boleto'], $data['valores_boleto']);
+	boleto_bancoob(	
+					$data['dados_cliente'], 
+					$data['dados_empresa'], 
+					$data['dados_boleto'], 
+					$data['valores_boleto']
+				);
 }
 ?>
 ```
