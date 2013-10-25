@@ -31,6 +31,8 @@ As configurações aqui colocadas são apenas para estudos, recomendo a consulta
 No arquivo `application/config/autoload.php`, temos: 
 
 ```php
+(...)
+
 //Carrega as bibliotecas do Banco de Dados, de Sessão do Codeigniter e validação de formulários
 $autoload['libraries'] = array('database', 'session', 'form_validation');
 
@@ -39,12 +41,16 @@ $autoload['helper'] = array('url', 'form');
 
 //Carrega a configuração de form_validation no autoload
 $autoload['config'] = array('form_validation');
+
+(...)
 ```
 *Apenas coloque database no autoload, se o banco de dados estiver configurado*
 
 No arquivo `application/config/config.php`, temos:
 
 ```php
+(...)
+
 //Carrega a tradução das mensagens
 $config['language']	= 'portuguese-br';
 
@@ -61,6 +67,8 @@ $config['sess_table_name']		= 'ci_sessions';
 $config['sess_match_ip']		= FALSE;
 $config['sess_match_useragent']	= TRUE;
 $config['sess_time_to_update']	= 300;
+
+(...)
 ```
 
 ##### SQL ci_sessions para MYSQL
@@ -257,6 +265,8 @@ $config = array(
 						        )
 			   			)      
 				);
+
+(...)
 ``` 
 
 ##### Na prática
