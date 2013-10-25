@@ -1,14 +1,17 @@
 #Codeigniter com Twitter Bootstrap 3
 
-#### Como usar ?
+## Como usar ?
 
-Faça um clone para sua máquina:
-`git clone https://github.com/renanmpimentel/ci_start.git`
+#### Faça um clone para sua máquina:
 
-Edite o arquivo de banco de dados:
+	- `git clone https://github.com/renanmpimentel/ci_start.git`
+
+#### Edite o arquivo de banco de dados:
+	
 	- `application/config/database.php`
 
-Coloque seus dados de banco de dados:
+#### Coloque seus dados de banco de dados:
+
 	```php
 		$db['default']['hostname'] = 'localhost';
 		$db['default']['username'] = 'user';
