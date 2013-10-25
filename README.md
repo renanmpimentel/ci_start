@@ -20,6 +20,32 @@
 	$db['default']['dbdriver'] = 'mysql';
 ```
 
+#### Configurações prontas
+
+As configurações aqui colocadas são apenas para estudos, recomendo a consulta na documentação oficial do Codeigniter.
+
+No arquivo `application/config/autoload.php`, temos: 
+
+```php
+	//Carrega as bibliotecas do Banco de Dados, de Sessão do Codeigniter e validação de formulários
+	$autoload['libraries'] = array('database', 'session', 'form_validation');
+
+	//Carrega os helpers de URL e para gerar formulários
+	$autoload['helper'] = array('url', 'form');
+
+	//Carrega a configuração de form_validation no autoload
+	$autoload['config'] = array('form_validation');
+```
+
+No arquivo `application/config/config.php`, temos:
+
+```php
+	//Carrega a tradução das mensagens
+	$config['language']	= 'portuguese-br';
+
+	//Criar um chave para criptografar sessões e etc
+	$config['encryption_key'] = '[ENCRYPTION_KEY]';
+```
 
 #### Input Text
 
