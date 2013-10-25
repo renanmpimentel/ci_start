@@ -1,114 +1,103 @@
+
+- Input Text
+
 ```php
 <?php
 	echo "<div class='form-group'>";
-		echo form_label('Texto', 'nome', array('style'=>'font-weight: bold;'));
-		echo form_input(array('name'=>'nome', 'class'=>'form-control', 'placeholder'=>'Label'));
+		echo form_label('Texto', 'nome');
+		echo form_input(array(
+								'name'=>'nome', 
+								'class'=>'form-control', 
+								'placeholder'=>'Label'
+							)
+						);
 		echo form_error('nome');
 	echo "</div>";
 ?>
 ```
-	
-```php
-<?php
-	echo "<div class='form-group'>";
-		echo form_label('Senha', 'senha', array('style'=>'font-weight: bold;'));
-		echo form_password(array('name'=>'senha', 'class'=>'form-control', 'placeholder'=>'senha'));
-		echo form_error('senha');
-	echo "</div>";
-	?>
-```
+
+- Input Password
 
 ```php
 <?php
 	echo "<div class='form-group'>";
-		echo form_label('Senha', 'senha', array('style'=>'font-weight: bold;'));
-		echo form_password(array('name'=>'senha', 'class'=>'form-control', 'placeholder'=>'senha'));
+		echo form_label('Senha', 'senha');
+		echo form_password(array(
+									'name'=>'senha', 
+									'class'=>'form-control', 
+									'placeholder'=>'senha'
+								)
+							);
 		echo form_error('senha');
 	echo "</div>";
 ?>
 ```
+
+- Input Textarea 
 
 ```php
 	<?php
 	echo "<div class='form-group'>";
-		echo form_label('Textarea', 'textarea', array('style'=>'font-weight: bold;'));
-		echo form_textarea(array('name'=>'textarea', 'class'=>'form-control', 'rows' => 5, 'placeholder'=>'Texto'));
+		echo form_label('Textarea', 'textarea');
+		echo form_textarea(array(
+									'name'=>'textarea', 
+									'class'=>'form-control', 
+									'rows' => 5, 
+									'placeholder'=>'Texto'));
 		echo form_error('textarea');
 	echo "</div>";
 	?>
 ```
 
-```php
-<?php
-	echo "<div class='form-group'>";
-		echo form_label('Textarea', 'textarea', array('style'=>'font-weight: bold;'));
-		echo form_textarea(array('name'=>'textarea', 'class'=>'form-control', 'rows' => 5, 'placeholder'=>'Texto'));
-		echo form_error('textarea');
-	echo "</div>";
-?>
-```
+- Input upload
 
 ```php
 <?php
 	echo "<div class='form-group'>";
-		echo form_label('Upload', 'upload', array('style'=>'font-weight: bold;'));
-		echo form_upload(array('name'=>'upload', 'class'=>'span12'));
+		echo form_label('Upload', 'upload');
+		echo form_upload(array(
+								'name'=>'upload', 
+								'class'=>'span12'
+								)
+							);
 		echo "<p class='help-block'>Texto de exemplo para download. (jpg, gif, png)</p>";
 		echo form_error('upload');
 	echo "</div>";
 ?>
 ```
-
-```php
-<?php
-	echo "<div class='form-group'>";
-		echo form_label('Upload', 'upload', array('style'=>'font-weight: bold;'));
-		echo form_upload(array('name'=>'upload', 'class'=>'span12'));
-		echo "<p class='help-block'>Texto de exemplo para download. (jpg, gif, png)</p>";
-		echo form_error('upload');
-	echo "</div>";
-?>
-```
+- Input Checkbox
 
 ```php
 <?php
 	echo "<div class='checkbox'>";
-		echo form_label('Checkbox', 'checkbox', array('style'=>'font-weight: bold;'));
-		echo form_checkbox(array('name'=>'checkbox', 'checked' => TRUE));
+		echo form_label('Checkbox', 'checkbox');
+		echo form_checkbox(array(
+									'name'=>'checkbox', 
+									'checked' => TRUE
+								)
+							);
 		echo form_error('checkbox');
 	echo "</div>";
 	?>
 ```
 
-```php
-<?php
-	echo "<div class='checkbox'>";
-		echo form_label('Checkbox', 'checkbox', array('style'=>'font-weight: bold;'));
-		echo form_checkbox(array('name'=>'checkbox', 'checked' => TRUE));
-		echo form_error('checkbox');
-	echo "</div>";
-?>
-```
+- Input Radio
 
 ```php
 <?php
 	echo "<div class='radio'>";
-		echo form_label('Radio', 'radio', array('style'=>'font-weight: bold;'));
-		echo form_radio(array('name'=>'radio', 'checked' => TRUE));
+		echo form_label('Radio', 'radio');
+		echo form_radio(array(
+								'name'=>'radio', 
+								'checked' => TRUE
+							)
+						);
 		echo form_error('radio');
 	echo "</div>";
 	?>
 ```
 
-```php
-<?php
-	echo "<div class='radio'>";
-		echo form_label('Radio', 'radio', array('style'=>'font-weight: bold;'));
-		echo form_radio(array('name'=>'radio', 'checked' => TRUE));
-		echo form_error('radio');
-	echo "</div>";
-?>
-```
+- Select
 
 ```php
 	<?php
@@ -118,48 +107,27 @@
                   '3' => 'Terceiro',
                   '4' => 'Quarto'
                 );
-		echo form_label('Select', 'select', array('style'=>'font-weight: bold;'));
+		echo form_label('Select', 'select');
 		echo form_dropdown('shirts', $select, '', 'class="form-control"');
 		echo form_error('select');
 	?>
 ```
 
-```php
-<?php
-	$select = array(
-              '1' => 'Primeiro',
-              '2' => 'Segundo',
-              '3' => 'Terceiro',
-              '4' => 'Quarto'
-            );
-	echo form_label('Select', 'select', array('style'=>'font-weight: bold;'));
-	echo form_dropdown('shirts', $select, '', 'class="form-control"');
-	echo form_error('select');	
-?>
-```
+- Button
 
 ```php
 <?php
-	echo form_label('Botões', 'botoes', array('style'=>'font-weight: bold;'));
-	echo "<p>".form_button(array('name'=>'botao', 'class'=>'btn btn-default', 'content'=>'Botao'))."</p>";
-	echo "<p>".form_reset(array('name'=>'botao', 'class'=>'btn btn-default', 'value'=>'Resetar'))."</p>";
-	echo "<p>".form_submit(array('name'=>'botao', 'class'=>'btn btn-default', 'value'=>'Enviar'))."</p>";
+	echo form_label('Botões', 'botoes');
+	echo form_button(array(
+									'name'=>'botao', 
+									'class'=>'btn btn-default', 
+									'content'=>'Botao'
+								)
+							);
 ?>
 ```
 
-```php
-<?php
-	echo form_label('Estilos de Botões', 'botoes', array('style'=>'font-weight: bold;'));
-	echo "<p>".form_button(array('name'=>'botao', 'class'=>'btn btn-default', 'content'=>'Botao default'))."</p>";
-	echo "<p>".form_button(array('name'=>'botao', 'class'=>'btn btn-default disabled', 'content'=>'Botao disabled'))."</p>";
-	echo "<p>".form_button(array('name'=>'botao', 'class'=>'btn btn-info', 'content'=>'Botao info'))."</p>";
-	echo "<p>".form_button(array('name'=>'botao', 'class'=>'btn btn-warning', 'content'=>'Botao warning'))."</p>";
-	echo "<p>".form_button(array('name'=>'botao', 'class'=>'btn btn-danger', 'content'=>'Botao danger'))."</p>";
-	echo "<p>".form_button(array('name'=>'botao', 'class'=>'btn btn-link', 'content'=>'Botao link'))."</p>";
-
-	echo form_close();
-?>
-```
+- Criando Boleto, usando helper `My_boleto_*`
 
 ```php
 <?php
@@ -190,6 +158,8 @@
 ?>
 ```
 
+- Crie um arquivo email.php em `application/config/`
+
 ```php
 <?php
 
@@ -207,19 +177,13 @@
 ?>
 ```
 
-```php
-$config = array(
-		    array(
-              'field'   => 'name',
-              'label'   => 'name', 
-              'rules'   => 'required|trim'
-            )
-        );
-```
+- Criando PDF usando o helper `my_pdf_helper`
 
 ```php
-$this->load->helper('My_Pdf');  
-		 
-create_pdf('Hello Word');
+<?php
+	$this->load->helper('My_Pdf');  
+			 
+	create_pdf('Hello Word');
+?>
 ```
 
