@@ -282,6 +282,9 @@ Exemplo básico:
 
 ```php
 <?php
+
+(...)
+
 /**
  * [validarFormulario description]
  * @return [type] [description]
@@ -347,6 +350,32 @@ public function boleto_bancoob()
 
 ```php
 <?php
+
+	$config['protocol']		='smtp';
+	$config['smtp_host']	='ssl://smtp.googlemail.com';
+	$config['smtp_port']	='465';
+	$config['smtp_timeout']	='60';
+	$config['smtp_user']	='your_email@gmail.com';
+	$config['smtp_pass']	='your_password';
+	$config['charset']		='utf-8';
+	$config['mailtype']		='html';
+	$config['newline']		="\r\n";
+
+?>
+```
+
+```php
+<?php
+
+(...)
+
+/**
+ * [enviarEmail description]
+ * @return [type] [description]
+ */
+public function enviarEmail()
+{
+
 	$this->load->library('email');
 
 	$this->email->from('your@example.com', 'Your Name');
@@ -358,6 +387,8 @@ public function boleto_bancoob()
 	$this->email->message('Testing the email class.');	
 
 	$this->email->send();
+}
+
 ?>
 ```
 -------------------
