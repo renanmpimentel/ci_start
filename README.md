@@ -209,6 +209,33 @@ $config = array(
 				);
 ``` 
 
+##### Na prática
+Exemplo básico:
+
+```php
+<?php
+/**
+ * [validarFormulario description]
+ * @return [type] [description]
+ */
+public function validarFormulario()
+{
+	$this->form_validation->config_rules = array();
+    $this->form_validation->error_array = array();
+
+    //Carrega regra de negocio criado no form_validation.php
+    $this->form_validation->set_rules( $this->config->item('form') );
+
+    if ($this->form_validation->run() == FALSE) {
+    	// NÃO PASSOU NA VALIDAÇÃO
+    } else {
+    	// PASSOU NA VALIDAÇÃO
+    }
+}
+
+?>
+```
+
 -------------------
 
 ##### Criando Boleto, usando helper `My_boleto_*`
