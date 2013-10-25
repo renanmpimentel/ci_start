@@ -1,12 +1,12 @@
 <div class="container">
 	<h2>Alertas</h2>
 	<hr />
-	<div class="alert">
+	<div class="alert alert-warning">
 	  <button type="button" class="close" data-dismiss="alert">&times;</button>
 	  <strong>Alerta!</strong> mensagem de teste, mensagem de alerta.
 	</div>
 
-	<div class="alert alert-error">
+	<div class="alert alert-danger">
 	  <button type="button" class="close" data-dismiss="alert">&times;</button>
 	  <strong>Alerta!</strong> mensagem de teste, mensagem de alerta.
 	</div>
@@ -127,7 +127,7 @@
 				<td> Registro 03 </td>
 				<td> Registro 04 </td>
 			</tr>
-			<tr class="error">
+			<tr class="danger">
 				<td> Registro 01 </td>
 				<td> Registro 02 </td>
 				<td> Registro 03 </td>
@@ -139,7 +139,7 @@
 				<td> Registro 03 </td>
 				<td> Registro 04 </td>
 			</tr>
-			<tr class="info">
+			<tr class="active">
 				<td> Registro 01 </td>
 				<td> Registro 02 </td>
 				<td> Registro 03 </td>
@@ -154,121 +154,147 @@
 	<hr />
 
 	<?php
-	echo form_open('', '');
+	$options = array('role' => 'form');
+	echo form_open('', $options);
 
 	echo "<h4>Input</h4>";
-	echo form_label('Texto', 'nome', array('style'=>'font-weight: bold;'));
-	echo form_input(array('name'=>'nome', 'class'=>'span12', 'placeholder'=>'Label'));
-	echo form_error('nome');
+	echo "<div class='form-group'>";
+		echo form_label('Texto', 'nome', array('style'=>'font-weight: bold;'));
+		echo form_input(array('name'=>'nome', 'class'=>'form-control', 'placeholder'=>'Label'));
+		echo form_error('nome');
+	echo "</div>";
 	?>
-	<br /><br />
+	<br />
 	<small>Código</small>
 	<pre>
 &lt;?php
-	echo form_label('Texto', 'nome', array('style'=>'font-weight: bold;'));
-	echo form_input(array('name'=>'nome', 'class'=>'span12', 'placeholder'=>'Label'));
-	echo form_error('nome');
+	echo "&lt;div class='form-group'&gt;";
+		echo form_label('Texto', 'nome', array('style'=>'font-weight: bold;'));
+		echo form_input(array('name'=>'nome', 'class'=>'form-control', 'placeholder'=>'Label'));
+		echo form_error('nome');
+	echo "&lt;/div&gt;";
 ?&gt;
 	</pre>
 	
 	<hr />
 
 	<?php
-	echo form_label('Senha', 'senha', array('style'=>'font-weight: bold;'));
-	echo form_password(array('name'=>'senha', 'class'=>'span12', 'placeholder'=>'senha'));
-	echo form_error('senha');
+	echo "<div class='form-group'>";
+		echo form_label('Senha', 'senha', array('style'=>'font-weight: bold;'));
+		echo form_password(array('name'=>'senha', 'class'=>'form-control', 'placeholder'=>'senha'));
+		echo form_error('senha');
+	echo "</div>";
 	?>
-	<br /><br />
+	<br />
 	<small>Código</small>
 	<pre>
 &lt;?php
-	echo form_label('Senha', 'senha', array('style'=>'font-weight: bold;'));
-	echo form_password(array('name'=>'senha', 'class'=>'span12', 'placeholder'=>'senha'));
-	echo form_error('senha');
+	echo "&lt;div class='form-group'&gt;";
+		echo form_label('Senha', 'senha', array('style'=>'font-weight: bold;'));
+		echo form_password(array('name'=>'senha', 'class'=>'form-control', 'placeholder'=>'senha'));
+		echo form_error('senha');
+	echo "&lt;/div&gt;";
 ?&gt;
 	</pre>
 
 	<hr />
 	<?php
-	echo form_label('Textarea', 'textarea', array('style'=>'font-weight: bold;'));
-	echo form_textarea(array('name'=>'textarea', 'class'=>'span12', 'placeholder'=>'Texto'));
-	echo form_error('textarea');
+	echo "<div class='form-group'>";
+		echo form_label('Textarea', 'textarea', array('style'=>'font-weight: bold;'));
+		echo form_textarea(array('name'=>'textarea', 'class'=>'form-control', 'rows' => 5, 'placeholder'=>'Texto'));
+		echo form_error('textarea');
+	echo "</div>";
 	?>
-	<br /><br />
+	<br />
 	<small>Código</small>
 	<pre>
 &lt;?php
-	echo form_label('Textarea', 'textarea', array('style'=>'font-weight: bold;'));
-	echo form_textarea(array('name'=>'textarea', 'class'=>'span12', 'placeholder'=>'Texto'));
-	echo form_error('textarea');
-?&gt;
-	</pre>
-
-	<hr />
-
-	<?php
-	echo form_label('Upload', 'upload', array('style'=>'font-weight: bold;'));
-	echo form_upload(array('name'=>'upload', 'class'=>'span12'));
-	echo form_error('upload');
-	?>
-	<br /><br />
-	<small>Código</small>
-	<pre>
-&lt;?php
-	echo form_label('Upload', 'upload', array('style'=>'font-weight: bold;'));
-	echo form_upload(array('name'=>'upload', 'class'=>'span12'));
-	echo form_error('upload');
-?&gt;
-	</pre>
-	<hr />
-
-	<?php
-	echo form_label('Checkbox', 'checkbox', array('style'=>'font-weight: bold;'));
-	echo form_checkbox(array('name'=>'checkbox', 'class'=>'', 'checked' => TRUE));
-	echo form_error('checkbox');	
-	?>
-	<br /><br />
-	<small>Código</small>
-	<pre>
-&lt;?php
-	echo form_label('Checkbox', 'checkbox', array('style'=>'font-weight: bold;'));
-	echo form_checkbox(array('name'=>'checkbox', 'class'=>'', 'checked' => TRUE));
-	echo form_error('checkbox');	
+	echo "&lt;div class='form-group'&gt;";
+		echo form_label('Textarea', 'textarea', array('style'=>'font-weight: bold;'));
+		echo form_textarea(array('name'=>'textarea', 'class'=>'form-control', 'rows' => 5, 'placeholder'=>'Texto'));
+		echo form_error('textarea');
+	echo "&lt;/div&gt;";
 ?&gt;
 	</pre>
 
 	<hr />
 
 	<?php
-	echo form_label('Radio', 'radio', array('style'=>'font-weight: bold;'));
-	echo form_radio(array('name'=>'radio', 'class'=>'', 'checked' => TRUE));
-	echo form_error('radio');	
+	echo "<div class='form-group'>";
+		echo form_label('Upload', 'upload', array('style'=>'font-weight: bold;'));
+		echo form_upload(array('name'=>'upload', 'class'=>'span12'));
+		echo "<p class='help-block'>Texto de exemplo para download. (jpg, gif, png)</p>";
+		echo form_error('upload');
+	echo "</div>";
 	?>
-	<br /><br />
+	<br />
 	<small>Código</small>
 	<pre>
 &lt;?php
-	echo form_label('Radio', 'radio', array('style'=>'font-weight: bold;'));
-	echo form_radio(array('name'=>'radio', 'class'=>'', 'checked' => TRUE));
-	echo form_error('radio');	
+	echo "&lt;div class='form-group'&gt;";
+		echo form_label('Upload', 'upload', array('style'=>'font-weight: bold;'));
+		echo form_upload(array('name'=>'upload', 'class'=>'span12'));
+		echo "&lt;p class='help-block'&gt;Texto de exemplo para download. (jpg, gif, png)&lt;/p&gt;";
+		echo form_error('upload');
+	echo "&lt;/div&gt;";
 ?&gt;
 	</pre>
-		
 	<hr />
 
 	<?php
-	$select = array(
+	echo "<div class='checkbox'>";
+		echo form_label('Checkbox', 'checkbox', array('style'=>'font-weight: bold;'));
+		echo form_checkbox(array('name'=>'checkbox', 'checked' => TRUE));
+		echo form_error('checkbox');
+	echo "</div>";
+	?>
+	<br />
+	<small>Código</small>
+	<pre>
+&lt;?php
+	echo "&lt;div class='checkbox'&gt;";
+		echo form_label('Checkbox', 'checkbox', array('style'=>'font-weight: bold;'));
+		echo form_checkbox(array('name'=>'checkbox', 'checked' => TRUE));
+		echo form_error('checkbox');
+	echo "&lt;/div&gt;";
+?&gt;
+	</pre>
+
+	<hr />
+
+	<?php
+	echo "<div class='radio'>";
+		echo form_label('Radio', 'radio', array('style'=>'font-weight: bold;'));
+		echo form_radio(array('name'=>'radio', 'checked' => TRUE));
+		echo form_error('radio');
+	echo "</div>";
+	?>
+	<br />
+	<small>Código</small>
+	<pre>
+&lt;?php
+	echo "&lt;div class='radio'&gt;";
+		echo form_label('Radio', 'radio', array('style'=>'font-weight: bold;'));
+		echo form_radio(array('name'=>'radio', 'checked' => TRUE));
+		echo form_error('radio');
+	echo "&lt;/div&gt;";
+?&gt;
+	</pre>
+
+	<hr />
+
+	<?php
+		$select = array(
                   '1' => 'Primeiro',
                   '2' => 'Segundo',
                   '3' => 'Terceiro',
                   '4' => 'Quarto'
                 );
-
-	echo form_label('Select', 'select', array('style'=>'font-weight: bold;'));
-	echo form_dropdown('shirts', $select);
-	echo form_error('select');		
+		echo form_label('Select', 'select', array('style'=>'font-weight: bold;'));
+		echo form_dropdown('shirts', $select, '', 'class="form-control"');
+		echo form_error('select');
 	?>
-	<br /><br />
+	<br />
 	<small>Código</small>
 	<pre>
 &lt;?php
@@ -279,7 +305,7 @@
               '4' => 'Quarto'
             );
 	echo form_label('Select', 'select', array('style'=>'font-weight: bold;'));
-	echo form_dropdown('shirts', $select);
+	echo form_dropdown('shirts', $select, '', 'class="form-control"');
 	echo form_error('select');	
 ?&gt;
 	</pre>
@@ -288,23 +314,49 @@
 
 	<?php
 	echo form_label('Botões', 'botoes', array('style'=>'font-weight: bold;'));
-	echo "<p>".form_button(array('name'=>'botao', 'class'=>'btn', 'content'=>'Botao'))."</p>";
-	echo "<p>".form_reset(array('name'=>'botao', 'class'=>'btn', 'value'=>'Resetar'))."</p>";
-	echo "<p>".form_submit(array('name'=>'botao', 'class'=>'btn', 'value'=>'Enviar'))."</p>";
+	echo "<p>".form_button(array('name'=>'botao', 'class'=>'btn btn-default', 'content'=>'Botao'))."</p>";
+	echo "<p>".form_reset(array('name'=>'botao', 'class'=>'btn btn-default', 'value'=>'Resetar'))."</p>";
+	echo "<p>".form_submit(array('name'=>'botao', 'class'=>'btn btn-default', 'value'=>'Enviar'))."</p>";
 	?>
 
 	<hr />
 
 	<?php
 	echo form_label('Estilos de Botões', 'botoes', array('style'=>'font-weight: bold;'));
-	echo "<p>".form_button(array('name'=>'botao', 'class'=>'btn btn-info', 'content'=>'Botao'))."</p>";
-	echo "<p>".form_button(array('name'=>'botao', 'class'=>'btn btn-warning', 'content'=>'Botao'))."</p>";
-	echo "<p>".form_button(array('name'=>'botao', 'class'=>'btn btn-danger', 'content'=>'Botao'))."</p>";
-	echo "<p>".form_button(array('name'=>'botao', 'class'=>'btn btn-inverse', 'content'=>'Botao'))."</p>";
-	echo "<p>".form_button(array('name'=>'botao', 'class'=>'btn btn-pnk', 'content'=>'Botao'))."</p>";
+	echo "<p>".form_button(array('name'=>'botao', 'class'=>'btn btn-default', 'content'=>'Botao default'))."</p>";
+	echo "<p>".form_button(array('name'=>'botao', 'class'=>'btn btn-default disabled', 'content'=>'Botao disabled'))."</p>";
+	echo "<p>".form_button(array('name'=>'botao', 'class'=>'btn btn-info', 'content'=>'Botao info'))."</p>";
+	echo "<p>".form_button(array('name'=>'botao', 'class'=>'btn btn-warning', 'content'=>'Botao warning'))."</p>";
+	echo "<p>".form_button(array('name'=>'botao', 'class'=>'btn btn-danger', 'content'=>'Botao danger'))."</p>";
+	echo "<p>".form_button(array('name'=>'botao', 'class'=>'btn btn-link', 'content'=>'Botao link'))."</p>";
 
 	echo form_close();
 	?>
+	<br />
+	<hr />
+	<h2>Modal</h2>
+	  <a data-toggle="modal" href="#modal" class="btn btn-primary btn-lg">Abrir modal</a>
+
+	  <!-- Modal -->
+	<div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+					<h4 class="modal-title">Título do Modal</h4>
+				</div>
+				<div class="modal-body">
+					Texto do modal
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+					<button type="button" class="btn btn-primary">Salvar</button>
+				</div>
+			</div><!-- /.modal-content -->
+		</div><!-- /.modal-dialog -->
+	</div><!-- /.modal -->
+
+	<hr />
 
 	<h2>Boletos com BoletoPHP (Helper)</h2>
 	<hr />

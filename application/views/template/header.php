@@ -5,17 +5,21 @@
 
 		<!-- Compatibilidde com o IE -->
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-		<!-- Meta Name -->	
+		<!-- Meta Name -->
 		<meta name="description" content="" />
 		<meta name="keywords" content="" />
-		<meta name="author" content="" />	
+		<meta name="author" content="" />
 
 		<title><?php echo $title ?></title>
 
-		<link href="<?php echo base_url('asset/css/bootstrap.min.css') ?>" media="screen" rel="stylesheet" type="text/css" />
-		<link href="<?php echo base_url('asset/css/bootstrap-responsive.min.css') ?>" media="screen" rel="stylesheet" type="text/css" />
+		<!-- Bootstrap 3.0 API -->
+    	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0-wip/css/bootstrap.min.css">
 
-		<script type="text/javascript" src="<?php echo base_url('asset/js/bootstrap.min.js') ?>"></script>
-    
+    	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	    <!--[if lt IE 9]>
+	      <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6.2/html5shiv.js"></script>
+	      <script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.3.0/respond.js"></script>
+	    <![endif]-->
 	</head>
