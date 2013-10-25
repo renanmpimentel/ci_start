@@ -4,21 +4,21 @@
 
 #### Faça um clone para sua máquina:
 
-	- `git clone https://github.com/renanmpimentel/ci_start.git`
+`git clone https://github.com/renanmpimentel/ci_start.git`
 
 #### Edite o arquivo de banco de dados:
 	
-	- `application/config/database.php`
+`application/config/database.php`
 
 #### Coloque seus dados de banco de dados:
 
-	```php
-		$db['default']['hostname'] = 'localhost';
-		$db['default']['username'] = 'user';
-		$db['default']['password'] = 'password';
-		$db['default']['database'] = '';
-		$db['default']['dbdriver'] = 'mysql';
-	```
+```php
+	$db['default']['hostname'] = 'localhost';
+	$db['default']['username'] = 'user';
+	$db['default']['password'] = 'password';
+	$db['default']['database'] = '';
+	$db['default']['dbdriver'] = 'mysql';
+```
 
 
 #### Input Text
