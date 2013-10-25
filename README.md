@@ -372,3 +372,12 @@ public function boleto_bancoob()
 ?>
 ```
 
+--------------------
+
+[Links]
+
+[Twitter Bootstrap](http://www.getbootstrap.com)
+[Codeigniter](http://www.codeigniter.com)
+[PHP](http://www.php.net)
+
+[@renanmpimentel](http://twitter.com/renanmpimentel)
