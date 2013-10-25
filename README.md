@@ -13,15 +13,14 @@
 #### Coloque seus dados de banco de dados:
 
 ```php
-	$db['default']['hostname'] = 'localhost';
-	$db['default']['username'] = 'user';
-	$db['default']['password'] = 'password';
-	$db['default']['database'] = '';
-	$db['default']['dbdriver'] = 'mysql';
+$db['default']['hostname'] = 'localhost';
+$db['default']['username'] = 'your_user';
+$db['default']['password'] = 'your_password';
+$db['default']['database'] = 'your_database';
+$db['default']['dbdriver'] = 'mysql';
 ```
 
 #### Pré-Configurações
-
 
 As configurações aqui colocadas são apenas para estudos, recomendo a consulta na documentação oficial do Codeigniter.
 
@@ -37,6 +36,7 @@ $autoload['helper'] = array('url', 'form');
 //Carrega a configuração de form_validation no autoload
 $autoload['config'] = array('form_validation');
 ```
+*Apenas coloque database no autoload, se o banco de dados estiver configurado*
 
 No arquivo `application/config/config.php`, temos:
 
