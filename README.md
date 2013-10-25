@@ -86,7 +86,9 @@ ON CI_Sessions(last_activity DESC)
 GO 
 ```
 
-##### `application/config/config.php`, configuramos a lingua padrão e a sessão:
+##### Configuramos a idioma para mensagens e as configurações para a sessão:
+
+`application/config/config.php`
 
 ```php
 (...)
