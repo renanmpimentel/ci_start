@@ -3,9 +3,9 @@
 	<!-- Scripts -->
 
     <!-- Google jQuery API -->
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="<?=base_url('/vendor/components/jquery/jquery.min.js')?>"></script>
     <!-- Bootstrap Script // Latest compiled and minified JavaScript -->
-    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0-wip/js/bootstrap.min.js"></script>
+    <script src="<?=base_url('/vendor/twbs/bootstrap/dist/js/bootstrap.min.js')?>"></script>
     <!-- Google Analytics -->
     <script type="text/javascript">
         var _gaq = _gaq || [];

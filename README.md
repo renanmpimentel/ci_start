@@ -9,6 +9,9 @@
 #### Ou faça o download aqui:
 [Download](https://github.com/renanmpimentel/ci_start/archive/master.zip)
 
+#### Instale as dependências do Composer:
+`php composer.phar install`
+
 #### Edite o arquivo de banco de dados:
 	
 `application/config/database.php`

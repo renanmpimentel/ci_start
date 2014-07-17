@@ -15,7 +15,7 @@
 		<title><?php echo $title ?></title>
 
 		<!-- Bootstrap 3.0 API -->
-    	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0-wip/css/bootstrap.min.css">
+    	<link rel="stylesheet" href="<?=base_url('/vendor/twbs/bootstrap/dist/css/bootstrap.min.css')?>">
 
     	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
 	    <!--[if lt IE 9]>
