@@ -1,8 +1,10 @@
 {
-	"description" : "Install codeigniter with twitter bootstrap 2.3",
+	"description" : "Install codeigniter with twitter bootstrap 3.2",
 	"name" : "renanmpimentel/codeigniter_start",
 	"license": "OSL-3.0",
 	"require": {
-		"php": ">=5.2.4"
+		"php": ">=5.2.4",
+    "twbs/bootstrap": "3.2.*@dev",
+    "components/jquery": "dev-master"
 	}
 }

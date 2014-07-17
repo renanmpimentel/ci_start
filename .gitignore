@@ -4,3 +4,5 @@
 */cache/*
 */cache/!index.html
 .DS_Store
+vendor
+components
